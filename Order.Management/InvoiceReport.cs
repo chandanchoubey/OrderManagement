@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Order.Management
 {
+    /*
+     This class will have same comments as CuttingListReport
+    most of the code can be abstracted for code reuse.
+     */
     class InvoiceReport : Order
     {
         public int tableWidth = 73;
@@ -30,7 +34,9 @@ namespace Order.Management
         {
             Console.WriteLine("Red Color Surcharge       " + TotalAmountOfRedShapes() + " @ $" + base.OrderedBlocks[0].AdditionalCharge + " ppi = $" + TotalPriceRedPaintSurcharge());
         }
-
+        //    index based accessing of array makes this class only work for three and just three shapes
+        // if there are less than 3 variety of shape, this will crash
+        // if there are more then for 4th and onwards no invoice will be generated
         public int TotalAmountOfRedShapes()
         {
             return base.OrderedBlocks[0].NumberOfRedShape + base.OrderedBlocks[1].NumberOfRedShape +
@@ -41,6 +47,9 @@ namespace Order.Management
         {
             return TotalAmountOfRedShapes() * base.OrderedBlocks[0].AdditionalCharge;
         }
+
+        // use padright or left and
+        //use  foreach loop and dynamically pick name rather than hard coding Square, Triangle etc.
         public void GenerateTable()
         {
             PrintLine();

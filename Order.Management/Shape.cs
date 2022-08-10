@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Order.Management
 {
+    // if there are more than Red, Blue or Yellow colours this abstract class wont work
+    // it by having only Red, Blue or Yellow it does not feel like abstract class
     abstract class Shape
     {
         public string Name { get; set; }

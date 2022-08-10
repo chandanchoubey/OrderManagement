@@ -4,6 +4,11 @@ using System.Text;
 
 namespace Order.Management
 {
+    /*
+ This class will have same comments as CuttingListReport
+    and very identical to CuttingListReport, these 2 classes can further be abtracted for code
+    resue
+ */
     class PaintingReport : Order
     {
         public int tableWidth = 73;

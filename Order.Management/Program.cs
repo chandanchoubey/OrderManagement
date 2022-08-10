@@ -36,6 +36,9 @@ namespace Order.Management
         // Order Squares Input
         public static Square OrderSquaresInput()
         {
+            // no validation, convert.toint32 will fail if
+            // non numeric value or float is input.
+            // negative numbers are allowed
             Console.Write("\nPlease input the number of Red Squares: ");
             int redSquare = Convert.ToInt32(userInput());
             Console.Write("Please input the number of Blue Squares: ");
@@ -99,11 +102,11 @@ namespace Order.Management
         private static (string customerName, string address, string dueDate) CustomerInfoInput()
         {
             Console.Write("Please input your Name: ");
-            string customerName = userInput();
+            string customerName = userInput(); // no validation, blank space allowed
             Console.Write("Please input your Address: ");
-            string address = userInput();
+            string address = userInput();// no validation, blank space allowed
             Console.Write("Please input your Due Date: ");
-            string dueDate = userInput();
+            string dueDate = userInput(); //no validation for date (anything allowed, blank space)
             return (customerName, address, dueDate);
         }
 
